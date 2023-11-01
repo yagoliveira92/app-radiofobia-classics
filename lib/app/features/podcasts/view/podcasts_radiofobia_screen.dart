@@ -35,7 +35,8 @@ class _PodcastsRadiofobiaScreenState extends State<PodcastsRadiofobiaScreen> {
         ),
       )
       ..loadRequest(
-        Uri.parse('https://radiofobia.com.br/podcast/'),
+        Uri.parse(
+            'https://radiofobia.com.br/podcast/show/radiofobia-classics/'),
       );
   }
 

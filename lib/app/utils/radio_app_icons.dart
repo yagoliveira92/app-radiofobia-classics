@@ -21,10 +21,6 @@
 ///         License:   SIL (http://scripts.sil.org/OFL)
 ///         Homepage:  http://www.mfglabs.com/
 ///
-// ignore_for_file: constant_identifier_names
-
-library;
-
 import 'package:flutter/widgets.dart';
 
 class RadioAppIcon {
@@ -45,6 +41,8 @@ class RadioAppIcon {
       IconData(0xf099, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData facebook_1 =
       IconData(0xf09a, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData youtube =
+      IconData(0xf167, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData instagram_1 =
       IconData(0xf16d, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData whatsapp =
@@ -63,4 +61,6 @@ class RadioAppIcon {
       IconData(0xf3fe, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData whatsapp_square =
       IconData(0xf40c, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData youtube_square =
+      IconData(0xf431, fontFamily: _kFontFam, fontPackage: _kFontPkg);
 }

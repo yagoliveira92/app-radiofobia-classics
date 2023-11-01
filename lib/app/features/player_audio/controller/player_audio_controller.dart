@@ -27,8 +27,8 @@ class PlayerAudioModel extends BaseAudioHandler {
         mediaItem.add(
           MediaItem(
             id: 'audio_1',
-            title: 'Radiofobia Classics!',
-            album: 'Radiofobia Podcast Network',
+            title: 'Rádiofobia Classics!',
+            album: 'Rádiofobia Podcast Network',
             artUri: Uri.parse(
                 'https://radiofobia.com.br/podcast/wp-content/uploads/2023/09/cover_classics_3000x3000-v2-768x768.jpg'),
           ),
@@ -75,16 +75,16 @@ class PlayerAudioModel extends BaseAudioHandler {
       mediaItem.add(MediaItem(
         id: 'audio_1',
         title: responseShoutcast[6],
-        artist: 'Radiofobia Podcast Network',
-        album: 'Radiofobia Classics',
+        artist: 'Rádiofobia Podcast Network',
+        album: 'Rádiofobia Classics',
         artUri: Uri.parse(
             'https://radiofobia.com.br/podcast/wp-content/uploads/2023/09/cover_classics_3000x3000-v2-768x768.jpg'),
       ));
       return MediaItem(
         id: 'audio_1',
         title: responseShoutcast[6],
-        artist: 'Radiofobia Podcast Network',
-        album: 'Radiofobia Classics',
+        artist: 'Rádiofobia Podcast Network',
+        album: 'Rádiofobia Classics',
         artUri: Uri.parse(
             'https://radiofobia.com.br/podcast/wp-content/uploads/2023/09/cover_classics_3000x3000-v2-768x768.jpg'),
       );
@@ -92,16 +92,16 @@ class PlayerAudioModel extends BaseAudioHandler {
     mediaItem.add(
       MediaItem(
         id: 'audio_1',
-        title: 'Radiofobia Classics!',
-        album: 'Radiofobia Podcast Network',
+        title: 'Rádiofobia Classics!',
+        album: 'Rádiofobia Podcast Network',
         artUri: Uri.parse(
             'https://radiofobia.com.br/podcast/wp-content/uploads/2023/09/cover_classics_3000x3000-v2-768x768.jpg'),
       ),
     );
     return MediaItem(
       id: 'audio_1',
-      title: 'Radiofobia Classics!',
-      album: 'Radiofobia Podcast Network',
+      title: 'Rádiofobia Classics!',
+      album: 'Rádiofobia Podcast Network',
       artUri: Uri.parse(
           'https://radiofobia.com.br/podcast/wp-content/uploads/2023/09/cover_classics_3000x3000-v2-768x768.jpg'),
     );

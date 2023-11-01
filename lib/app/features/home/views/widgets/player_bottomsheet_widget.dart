@@ -4,6 +4,7 @@ import 'package:app_radiofobia_classics/app/features/player_audio/controller/pla
 import 'package:audio_service/audio_service.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
+import 'package:text_scroll/text_scroll.dart';
 
 class PlayerBottomsheetWidget extends StatefulWidget {
   const PlayerBottomsheetWidget({
@@ -32,7 +33,7 @@ class _PlayerBottomsheetWidgetState extends State<PlayerBottomsheetWidget>
     super.initState();
     _player.play();
     _streamController = StreamController<MediaItem>();
-    _timer = Timer.periodic(const Duration(seconds: 2), (_) => _fetchData());
+    _timer = Timer.periodic(const Duration(seconds: 5), (_) => _fetchData());
     _controller = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 500),
@@ -92,8 +93,8 @@ class _PlayerBottomsheetWidgetState extends State<PlayerBottomsheetWidget>
         child: StreamBuilder<MediaItem>(
           initialData: MediaItem(
             id: 'audio_1',
-            title: 'Radiofobia Classics!',
-            album: 'Radiofobia Podcast Network',
+            title: 'Rádiofobia Classics!',
+            album: 'Rádiofobia Podcast Network',
             artUri: Uri.parse(
                 'https://radiofobia.com.br/podcast/wp-content/uploads/2023/09/cover_classics_3000x3000-v2-768x768.jpg'),
           ),
@@ -114,11 +115,14 @@ class _PlayerBottomsheetWidgetState extends State<PlayerBottomsheetWidget>
                   children: [
                     SizedBox(
                       width: 200,
-                      child: Text(
+                      child: TextScroll(
                         snapshot.hasData
-                            ? snapshot.data?.title ?? 'Radiofobia Classics'
+                            ? snapshot.data?.title ?? 'Rádiofobia Classics'
                             : 'Obtendo música...',
-                        overflow: TextOverflow.ellipsis,
+                        mode: TextScrollMode.endless,
+                        intervalSpaces: 10,
+                        velocity:
+                            const Velocity(pixelsPerSecond: Offset(50, 0)),
                         style: const TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 18,
@@ -126,7 +130,7 @@ class _PlayerBottomsheetWidgetState extends State<PlayerBottomsheetWidget>
                       ),
                     ),
                     Text(
-                      snapshot.data?.album ?? 'Tá no coração!',
+                      snapshot.data?.album ?? 'Rádiofobia Podcast Network',
                     )
                   ],
                 ),

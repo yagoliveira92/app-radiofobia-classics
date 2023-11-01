@@ -16,7 +16,7 @@ Future<void> main() async {
     builder: () => GetIt.I<PlayerAudioModel>(),
     config: const AudioServiceConfig(
       androidNotificationChannelId: 'br.dev.yago.radiofobia.channel.audio',
-      androidNotificationChannelName: 'Radiofobia Classics',
+      androidNotificationChannelName: 'Rádiofobia Classics',
       notificationColor: Color(0xFF4B4B4B),
       androidStopForegroundOnPause: true,
       androidNotificationOngoing: true,
@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Radiofobia Classics',
+      title: 'Rádiofobia Classics',
       theme: ThemeData(
         primaryColor: GenerateMaterialColor.generate(
           const Color(0xFFFFE173),

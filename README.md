@@ -1,6 +1,6 @@
 # app_radiofobia_classics
 
-Aplicativo do Radiofobia Classics!
+Aplicativo do Rádiofobia Classics!
 
 ## Getting Started
 

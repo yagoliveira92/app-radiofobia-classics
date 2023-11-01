@@ -5,6 +5,7 @@ import 'package:audio_service/audio_service.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 import 'package:share_plus/share_plus.dart';
+import 'package:text_scroll/text_scroll.dart';
 
 class PlayerScreen extends StatefulWidget {
   const PlayerScreen({super.key});
@@ -26,8 +27,7 @@ class _PlayerScreenState extends State<PlayerScreen>
   void initState() {
     super.initState();
     _streamController = StreamController<MediaItem>();
-    _timer =
-        Timer.periodic(const Duration(milliseconds: 200), (_) => _fetchData());
+    _timer = Timer.periodic(const Duration(seconds: 5), (_) => _fetchData());
     _controller = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 500),
@@ -73,7 +73,7 @@ class _PlayerScreenState extends State<PlayerScreen>
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color(0xFF4B4B4B),
-        title: Text('Radiofobia Classics'),
+        title: Text('Rádiofobia Classics'),
       ),
       backgroundColor: const Color(0xFF222222),
       body: SafeArea(
@@ -118,13 +118,15 @@ class _PlayerScreenState extends State<PlayerScreen>
                     ),
                     Padding(
                       padding: const EdgeInsets.only(left: 2),
-                      child: Text(
+                      child: TextScroll(
                         snapshot.hasData
-                            ? snapshot.data?.title ?? 'Radiofobia Classics'
+                            ? snapshot.data?.title ?? 'Rádiofobia Classics'
                             : 'Obtendo música...',
-                        softWrap: true,
+                        mode: TextScrollMode.endless,
                         textAlign: TextAlign.center,
-                        overflow: TextOverflow.ellipsis,
+                        velocity:
+                            const Velocity(pixelsPerSecond: Offset(50, 0)),
+                        intervalSpaces: 10,
                         style: const TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 27,
@@ -133,7 +135,7 @@ class _PlayerScreenState extends State<PlayerScreen>
                       ),
                     ),
                     const Text(
-                      'Radiofobia Podcast Network',
+                      'Rádiofobia Podcast Network',
                       overflow: TextOverflow.ellipsis,
                       textAlign: TextAlign.center,
                       style: TextStyle(
@@ -149,7 +151,7 @@ class _PlayerScreenState extends State<PlayerScreen>
                         const link =
                             'https://play.google.com/store/apps/details?id=br.dev.yago.radiofobia.classics';
                         Share.share(
-                            'Clique aqui e conheça o seu Radiofobia Classics: $link');
+                            'Clique aqui e conheça o seu Rádiofobia Classics: $link');
                       },
                       child: const Text(
                         'Compartilhar',
