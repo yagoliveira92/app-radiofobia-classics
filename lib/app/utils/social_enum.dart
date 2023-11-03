@@ -8,7 +8,7 @@ enum SocialEnum {
       name: 'Facebook'),
   instagram(
       icon: RadioAppIcon.instagram_1,
-      url: 'https://www.instagram.com/leoradiofobia/',
+      url: 'https://www.instagram.com/radiofobiaclassics/',
       name: 'Instagram'),
 
   youtube(
