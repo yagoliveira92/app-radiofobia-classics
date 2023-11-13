@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class PodcastsRadiofobiaScreen extends StatefulWidget {
-  const PodcastsRadiofobiaScreen({Key? key}) : super(key: key);
+  const PodcastsRadiofobiaScreen({super.key});
 
   @override
   State<PodcastsRadiofobiaScreen> createState() =>

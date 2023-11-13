@@ -73,7 +73,7 @@ class _PlayerScreenState extends State<PlayerScreen>
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color(0xFF4B4B4B),
-        title: Text('Rádiofobia Classics'),
+        title: const Text('Rádiofobia Classics'),
       ),
       backgroundColor: const Color(0xFF222222),
       body: SafeArea(
