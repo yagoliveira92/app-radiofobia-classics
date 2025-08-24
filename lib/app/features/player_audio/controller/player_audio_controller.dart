@@ -3,8 +3,21 @@ import 'package:audio_service/audio_service.dart';
 import 'package:just_audio/just_audio.dart';
 
 class PlayerAudioModel extends BaseAudioHandler {
-  final _player = AudioPlayer();
-  final _url = 'https://server09.srvsh.com.br:7020';
+  final _player = AudioPlayer(
+    audioLoadConfiguration: const AudioLoadConfiguration(
+      darwinLoadControl: DarwinLoadControl(
+        preferredForwardBufferDuration: Duration(seconds: 45),
+      ),
+      androidLoadControl: AndroidLoadControl(
+        minBufferDuration: Duration(seconds: 20),
+        maxBufferDuration: Duration(seconds: 60),
+        bufferForPlaybackDuration: Duration(seconds: 2),
+        bufferForPlaybackAfterRebufferDuration: Duration(seconds: 5),
+        prioritizeTimeOverSizeThresholds: true,
+      ),
+    ),
+  );
+  final _url = 'https://stream.zeno.fm/zgi6bmrynh1uv';
 
   final _coverModel = CoverModel();
 
@@ -15,7 +28,7 @@ class PlayerAudioModel extends BaseAudioHandler {
       processingState: AudioProcessingState.loading,
     ));
     // Connect to the URL
-    _player.setUrl('$_url/listen.mp3').then(
+    _player.setUrl(_url).then(
       (_) {
         // Broadcast that we've finished loading
         playbackState.add(playbackState.value.copyWith(
